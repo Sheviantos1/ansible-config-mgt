@@ -2,3 +2,10 @@
 - hosts: uat-webservers
   roles:
      - webserver
+
+  become: yes
+  tasks:
+    - name: Install httpd
+      apt:
+        name: httpd
+        state: present
